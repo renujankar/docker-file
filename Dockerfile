@@ -1,6 +1,4 @@
-FROM ubuntu:18.04
-RUN apt-get update -y && apt-get install apache2 -y
-RUN service apache2 restart
-COPY index.html /var/www/html
+FROM httpd:latest
+COPY index.html /usr/local/apache2/htdocs/
 EXPOSE 80
-ENTRYPOINT [ "/usr/sbin/apache2ctl", "-D", "FOREGROUND" ]
+ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
