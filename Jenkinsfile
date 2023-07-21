@@ -19,7 +19,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker run -it -p 80:80 my-httpd-image"
+                    sh "docker run -itp 80:80 --name test my-httpd-image"
                 }
             }
         }
