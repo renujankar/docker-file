@@ -25,7 +25,7 @@ pipeline {
                     //sh "docker stop test"
                     //sh "docker rm test"
                     sh "docker system prune -a -f"
-                    sh "docker run -d -p 80:80 my-httpd-image"
+                    sh "docker run -d -p 80:80 my-httpd"
                 }
             }
         }
