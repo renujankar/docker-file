@@ -1,15 +1,27 @@
 pipeline {
-    agent {
-         label "dev"
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+             sh   "checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [['https://github.com/renujankar/docker-file.git']]])"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                   sh "docker build -t my-httpd-image ."
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    sh "docker run -it -p 80:80 my-httpd-image"
+                }
+            }
+        }
     }
-      stages {
-           stage ('stage-1') {
-              steps {
-              sh "sudo docker system prune -a -f"
-              sh "sudo docker build -t my-httpd:1.0 /mnt/jenkins-slave/workspace/docker-file/"
-             // sh "sudo docker stop test"//
-              sh "sudo docker run -itdp 700:80 --name test my-httpd:1.0"
-              }
-      }
-}
 }
