@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-             sh   "checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [['https://github.com/renujankar/docker-file.git']]])"
+             sh   "git url:https://github.com/renujankar/docker-file.git, branch:master"
+
             }
         }
 
