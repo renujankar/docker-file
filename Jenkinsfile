@@ -11,8 +11,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    /*sh "docker stop test"
-                    sh "docker rm test"/*
+                    //sh "docker stop test"
+                    //sh "docker rm test"
                     sh "docker system prune -a -f"
                    sh "docker build -t my-httpd ."
                 }
