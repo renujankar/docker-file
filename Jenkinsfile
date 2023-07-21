@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-             sh   "git url:https://github.com/renujankar/docker-file.git, branch:master"
-
+             sh   "git checkout master"
             }
         }
 
