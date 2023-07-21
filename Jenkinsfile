@@ -19,6 +19,9 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
+                    sh "docker stop test"
+                    sh "docker rm test"
+                    sh "docker system prune -a -f"
                     sh "docker run -d -p 80:80 --name test my-httpd-image"
                 }
             }
