@@ -11,7 +11,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                   sh "docker build -t my-httpd-image ."
+                    sh "docker stop test"
+                    sh "docker rm test"
+                    sh "docker system prune -a -f"
+                   sh "docker build -t my-httpd ."
                 }
             }
         }
@@ -19,10 +22,10 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker stop test"
+                    /*sh "docker stop test"
                     sh "docker rm test"
-                    sh "docker system prune -a -f"
-                    sh "docker run -d -p 80:80 --name test my-httpd-image"
+                    sh "docker system prune -a -f"*/
+                    sh "docker run -d -p 80:80 my-httpd-image"
                 }
             }
         }
