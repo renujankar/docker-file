@@ -7,7 +7,7 @@ pipeline {
              sh   "sudo yum install git -y"
                 sh "sudo yum install docker -y"
                 sh "sudo systemctl start docker"
-                sh "sudo sydtemctl enable docker"
+                sh "sudo systemctl enable docker"
             }
         }
 
