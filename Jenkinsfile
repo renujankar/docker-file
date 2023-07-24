@@ -6,10 +6,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-             sh   "sudo yum install git -y"
-                sh "yum install docker -y"
-                sh "systemctl start docker"
-                sh "systemctl enable docker"
+                sh"sudo sudo yum install git -y"
+                sh "sudo yum install docker -y"
+                sh "sudo systemctl start docker"
+                sh "sudo systemctl enable docker"
+                sh ""sudo git clone https://github.com/renujankar/docker-file.git"
             }
         }
 
