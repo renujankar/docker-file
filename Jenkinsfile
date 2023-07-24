@@ -5,9 +5,9 @@ pipeline {
         stage('Checkout') {
             steps {
              sh   "sudo yum install git -y"
-                sh "sudo yum install docker -y"
-                sh "sudo systemctl start docker"
-                sh "sudo systemctl enable docker"
+                //sh "sudo yum install docker -y"
+                //sh "sudo systemctl start docker"
+                //sh "sudo systemctl enable docker"//
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
                 script {
                     //sh "docker stop test"
                     //sh "docker rm test"
-                    sh "docker run -itdp 80:80 my-httpd:1.0 bash"
+                    sh "docker run -itdp 90:80 my-httpd:1.0 bash"
                 }
             }
         }
