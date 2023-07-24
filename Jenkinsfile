@@ -17,7 +17,7 @@ pipeline {
                     //sh "docker stop test"
                     //sh "docker rm test"
                     sh "docker system prune -a -f"
-                   sh "docker build -t test:5.0 ."
+                   sh "docker build -t test:8.0 ."
                 }
             }
         }
@@ -28,8 +28,8 @@ pipeline {
                     //sh "docker stop test"
                     //sh "docker rm test"
                    // sh "docker system prune -a -f"
-                    sh "docker run -itdp 90:80 --name saru test:5.0"
-                    sh "docker exec sarika chmod -R 777 /usr/local/apache2/"
+                    sh "docker run -itdp 90:80 --name renu test:8.0"
+                    sh "docker exec renu chmod -R 777 /usr/local/apache2/"
             }
         }
     }
