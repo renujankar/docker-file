@@ -29,7 +29,7 @@ pipeline {
                     //sh "docker rm test"
                    // sh "docker system prune -a -f"
                     sh "docker run -itdp 600:80 --name renu test:8.0"
-                    sh "docker exec renu chmod -R 777 /usr/local/apache2/"
+                    sh "docker exec renu chmod -R 777 /var/www/html/"
             }
         }
     }
