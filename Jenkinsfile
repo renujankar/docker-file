@@ -9,6 +9,7 @@ pipeline {
                 sh "sudo yum install docker -y"
                 sh "sudo systemctl start docker"
                 sh "sudo systemctl enable docker"
+                sh "sudo cd /mnt"
                 sh "sudo git clone https://github.com/renujankar/docker-file.git"
             }
         }
