@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-             sh   "git checkout master"
+             sh   "sudo yum install git -y"
+                sh "sudo yum install docker -y"
+                sh "sudo systemctl start docker"
+                sh "sudo sydtemctl enable docker"
             }
         }
 
@@ -24,7 +27,6 @@ pipeline {
                 script {
                     //sh "docker stop test"
                     //sh "docker rm test"
-                    sh "docker system prune -a -f"
                     sh "docker run -itdp 80:80 my-httpd:1.0 bash"
                 }
             }
