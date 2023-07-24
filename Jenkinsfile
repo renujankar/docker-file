@@ -28,8 +28,9 @@ pipeline {
                     //sh "docker stop test"
                     //sh "docker rm test"
                    // sh "docker system prune -a -f"
-                    sh "docker run -itdp 90:80 my-httpd:1.0 bash"
+                    sh "docker run -itdp 90:80 --name sarika my-httpd:1.0 bash"
                     sh "cp /root/.jenkins/workspace/httpd-dockerfile/index.html /var/www/html/"
+                    sh "chmod -R 777 /var/www/html/ "
                 }
             }
         }
