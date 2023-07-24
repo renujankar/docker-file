@@ -30,10 +30,6 @@ pipeline {
                    // sh "docker system prune -a -f"
                     sh "docker run -itdp 90:80 --name saru test:5.0"
                     sh "docker exec sarika chmod -R 777 /usr/local/apache2/"
-                    // sh "git init"
-                   // sh "docker run -itdp 80:80 /root/.jenkins/workspace/sarika/:/usr/local/apache2/htdocs/ --name sarika httpd"
-                   //sh "docker exec saru chmod -R 777 /usr/local/apache2/"
-
             }
         }
     }
