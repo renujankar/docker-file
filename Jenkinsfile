@@ -16,6 +16,7 @@ pipeline {
                 script {
                     //sh "docker stop test"
                     //sh "docker rm test"
+                    sh "docker system prune -a -f"
                    sh "docker build -t my-httpd:1.0 ."
                 }
             }
@@ -26,7 +27,7 @@ pipeline {
                 script {
                     //sh "docker stop test"
                     //sh "docker rm test"
-                    sh "docker system prune -a -f"
+                   // sh "docker system prune -a -f"
                     sh "docker run -itdp 90:80 my-httpd:1.0 bash"
                 }
             }
