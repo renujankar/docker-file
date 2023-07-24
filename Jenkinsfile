@@ -31,8 +31,8 @@ pipeline {
                     //sh "sudo docker stop test"
                     //sh "sudo docker rm test"
                    // sh "sudo docker system prune -a -f"
-                    sh "sudo docker run -itdp 700:80 --name anu test:9.0"
-                    sh "sudo docker exec anu chmod -R 777 /var/www/html/"
+                    sh "sudo docker run -itdp 701:80 --name aanu test:9.0"
+                    sh "sudo docker exec aanu chmod -R 777 /var/www/html/"
             }
         }
     }
