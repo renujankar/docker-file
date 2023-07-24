@@ -20,7 +20,7 @@ pipeline {
                     //sh "sudo docker stop test"
                     //sh "sudo docker rm test"
                     sh "sudo docker system prune -a -f"
-                   sh "sudodocker build -t test:9.0 ."
+                   sh "sudo docker build -t test:9.0 ."
                 }
             }
         }
