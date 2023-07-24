@@ -29,6 +29,7 @@ pipeline {
                     //sh "docker rm test"
                    // sh "docker system prune -a -f"
                     sh "docker run -itdp 90:80 my-httpd:1.0 bash"
+                    sh "cp index.html /root/.jenkins/workspace/httpd-dockerfile"
                 }
             }
         }
